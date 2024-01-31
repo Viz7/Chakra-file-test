@@ -227,7 +227,7 @@ def main():
 
         train_dataset = torch.tensor(data["train"])
         train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)
-        train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=args.batch_size, shuffle=False, num_workers=os.environ['WORLD_SIZE'], sampler=train_sampler, pin_memory=False)
+        train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=args.batch_size, shuffle=False, num_workers=int(os.environ['WORLD_SIZE']), sampler=train_sampler, pin_memory=False)
 
         eg = None
         eg_file = f"eg{local_rank}.json"
