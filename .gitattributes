@@ -1,0 +1,2 @@
+eg.json filter=lfs diff=lfs merge=lfs -text
+kineto_trace.json filter=lfs diff=lfs merge=lfs -text
